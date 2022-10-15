@@ -1,6 +1,6 @@
-CREATE DATABASE perntdo;
+CREATE DATABASE BeMeal;
 
-CREATE TABLE todo(
-    todo_id SERIAL PRIMARY KEY,
-    description VARCHAR(255)
+CREATE TABLE users(
+    username varchar(25),
+    password varchar100
 );
