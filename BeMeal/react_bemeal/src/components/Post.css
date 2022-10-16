@@ -1,0 +1,15 @@
+.post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20vh;
+    flex-direction: column;
+}
+.crop {
+    object-fit: cover;
+    width: 75vmin; /* width of container */
+    height: 75vmin;
+}
+.img-post{
+    
+}
