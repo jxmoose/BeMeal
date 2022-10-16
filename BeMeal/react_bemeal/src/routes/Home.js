@@ -7,7 +7,11 @@ function Home() {
             <div>
                 <h1>BeMeal</h1>
             </div>
-            <Post></Post>
+            <Post/>
+            <Post/>
+            <Post/>
+            <Post/>
+            <Post/>
         </div>
     );
 }
