@@ -4,8 +4,8 @@ const fs = require('fs');
 const session = require('express-session');
 const { builtinModules } = require('module');
 
-const ID = 'AKIAVQ5T6O24PMS4FOQL';
-const SECRET = '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';
+const ID = 'AKIAVQ5T6O24GUJ2BYV5';
+const SECRET = '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';
 const BUCKET_NAME = 'bemeal-images';
 
 AWS.config.update({

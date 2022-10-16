@@ -10,8 +10,8 @@ const upload = multer({ dest: 'uploads/' })
 
 const bucketName = 'bemeal-images';
 const region = 'us-west-1';
-const accessKeyId = 'AKIAVQ5T6O24PMS4FOQL';
-const secretAccessKey = '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';
+const accessKeyId = 'AKIAVQ5T6O24GUJ2BYV5';
+const secretAccessKey = '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';
 
 const s3 = new AWS.S3({
     accessKeyId: accessKeyId,
@@ -21,7 +21,8 @@ const s3 = new AWS.S3({
 
 router.post("/uploadfile", upload.single('file'), (req, res) => {
     // console.log(req);
-    console.log(req.file);
+    //console.log(req.file);
+    console.log(req);
     if (req.file == null) {
         return res.status(400).json({ 'message': 'Please choose the file' })
      }
@@ -31,8 +32,7 @@ router.post("/uploadfile", upload.single('file'), (req, res) => {
     // res.sendStatus(201);
 
     const uploadImage=(file)=>{
-        const fileStream 
-                =fs.createReadStream(file.path);
+        const fileStream = fs.createReadStream(file.path);
 
         const params = {
             Bucket: bucketName,
@@ -46,6 +46,7 @@ router.post("/uploadfile", upload.single('file'), (req, res) => {
                 throw err
             }
             console.log(`File uploaded successfully. ${data.Location}`);
+            const q = pool.query("INSERT INTO images VALUES ($1, $2)", [username, data.Location])
         });
     }
     uploadImage(file);
