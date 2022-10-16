@@ -2,3 +2,7 @@
     color: #DEE2E6;
     font-weight: 1000px;
 }
+
+.brand-name:hover{
+    cursor: pointer;
+}

@@ -26,7 +26,7 @@ function Register() {
                         <input class="un" type="text" name="username" placeholder="Username"/>
                         <input class="pass" type="text" name="password" placeholder="Password"/>
                     <button class="btn">Create Account</button>
-                    <a onClick={() => {window.location.href="/"}}>Already know your login?</a>
+                    <p class="login-stuff">Already know your <a class="login-label" onClick={() => {window.location.href="/"}}>login?</a> </p>
                 </form>
             </div>
         </div>
