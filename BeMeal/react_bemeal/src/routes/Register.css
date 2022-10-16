@@ -1,8 +1,8 @@
-body {
+/*body {
     color: #DEE2E6;
     overflow-x: hidden;
     overflow-y: hidden;
-}
+} */
 
 .register-form{
     margin-top: 10px;
@@ -41,6 +41,7 @@ body {
 }
 
 .register-label{
+    color: #DEE2E6;
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 40px;
@@ -111,6 +112,7 @@ transform: translateY(-1px);
 }
 
 .login-stuff{
+    color: #DEE2E6;
     padding-bottom: 12px;
 }
 
