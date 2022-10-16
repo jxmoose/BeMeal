@@ -35,7 +35,7 @@ function Register() {
                 }}>
                     <h2 class="register-label">Register</h2>
                         <input class="un" type="text" name="username" placeholder="Username"/>
-                        <input class="pass" type="text" name="password" placeholder="Password"/>
+                        <input class="pass" type="password" name="password" placeholder="Password"/>
                     <button class="btn">Create Account</button>
                     <p class="login-stuff">Already know your <a class="login-label" onClick={() => {window.location.href="/"}}>login?</a> </p>
                 </form>

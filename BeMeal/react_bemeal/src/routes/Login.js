@@ -22,11 +22,8 @@ function Login() {
             </div>
             <div class='content'>
                 <form onSubmit={(event) => {
-                    let path = `/home`; 
-                    history.push(path);
-                    //console.log(event.target.username.value)
-                    //console.log(event.target.password.value)
-                    /*
+                    //let path = `/home`; 
+                    //history.push(path);
                     let condition = ""
                     axios.post('/auth', {
                         username: event.target.username.value,
@@ -42,11 +39,10 @@ function Login() {
                         let path = `/home`; 
                         history.push(path);
                     }
-                    */
                 }}>
                     <h2 class="register-label">Login</h2>
                         <input class="un" type="text" name="username" placeholder="Username"/>
-                        <input class="pass" type="text" name="password" placeholder="Password"/>
+                        <input class="pass" type="password" name="password" placeholder="Password"/>
                     <button class="btn">Login</button>
                     <p class="need-account-cover"><a class="need-account" onClick={() => {window.location.href="/register"}}>Don't have an account?</a></p>
                 </form>
