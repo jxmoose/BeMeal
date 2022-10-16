@@ -1,22 +1,13 @@
 import React, {useEffect, useState} from "react";
 import './Register.css';
+import Navbar from "../components/Navbar.js"
 
 function Register() {
     return (
         <div>
-            <div>
-                <h1>BeMeal</h1>
-            </div>
-            <div class = 'content'>
-                <h2 style={{
-                    marginBottom: '5vh',
-                }}>Register</h2>
-                <form style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexDirection: 'column'
-                }} onSubmit={(event) => {
+            <Navbar/>
+            <div class='content'>
+                <form onSubmit={(event) => {
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
                     const obj = {username: event.target.username.value, password: event.target.password.value}
@@ -26,9 +17,8 @@ function Register() {
                         body: JSON.stringify(obj)
                     })
                 }}>
-                    <label style={{
-                        marginBottom: '2vh',
-                    }}>
+                    <h2 class="register-label">Register</h2>
+                    <label>
                         <text>Enter Username: </text>
                         <input type="text" name="username"/>
                     </label>
@@ -36,7 +26,8 @@ function Register() {
                         <text>Enter Password: </text>
                         <input type="text" name="password"/>
                     </label>
-                    <button>Submit</button>
+                    <button>Create Account</button>
+                    <a onClick={() => {window.location.href="/"}}>Already know your login?</a>
                 </form>
             </div>
         </div>

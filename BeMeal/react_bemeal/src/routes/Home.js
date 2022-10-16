@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import Post from "../components/Post";
+import Navbar from "../components/Navbar"
+import "./Home.css"
 
 function Home() {
     return (
         <div>
-            <div>
-                <h1>BeMeal</h1>
-            </div>
+            <Navbar/>
             <Post/>
             <Post/>
             <Post/>
