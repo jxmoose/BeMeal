@@ -1,17 +1,17 @@
 import {
   BrowserRouter as Router,
-  Routes,
+  Switch,
   Route
 } from "react-router-dom";
 import Home from "./routes/Home";
 
 function App() {
   return <Router>
-    <Routes>
+    <Switch>
       <Route path="/">
-        <Home></Home>
+        <Home/>
       </Route>
-    </Routes>
+    </Switch>
   </Router>;
 }
 
