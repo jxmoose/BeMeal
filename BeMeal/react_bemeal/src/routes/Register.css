@@ -1,12 +1,15 @@
-body {
+/*body {
     color: #DEE2E6;
-}
+    overflow-x: hidden;
+    overflow-y: hidden;
+} */
 
-form{
+.register-form{
     margin-top: 10px;
 }
 
 .content > * {
+    position: relative;
     background-color: #6C757C;
     width: 400px;
     /*height: 400px;*/
@@ -15,10 +18,34 @@ form{
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
+.container-background {
+    margin: 3rem;
+    position: absolute;
+    display:inline-block; 
+
+    top: -1000px;
+    left: -350px;
+    bottom: -200px;
+    z-index: -1;
+    transform: rotate(300deg);
+    -webkit-transform: rotate(300deg);
+    color: #c6afaf;
+    font-size: 200px;
+    opacity: 40%;
+}
+
+.background-text{
+    white-space:nowrap;
+    margin: 0;
+    overflow: hidden;
+}
+
 .register-label{
+    color: #DEE2E6;
     font-weight: bold;
-    font-size: 23px;
+    font-size: 36px;
     margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .un {
@@ -35,7 +62,6 @@ form{
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
     margin-bottom: 30px;
-    text-align: center;
     margin-bottom: 27px;
 }
 
@@ -53,19 +79,18 @@ form{
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
     margin-bottom: 50px;
-    text-align: center;
     margin-bottom: 27px;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 .btn {
     width: 14.4vmin;
     padding: 8px 8px;
+    font-weight: 500;
     font-size: 10px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
+    color: rgb(38, 50, 56);
     background-color: #dee2e6;
     border: none;
     border-radius: 45px;
@@ -76,12 +101,30 @@ form{
 }
 
 .btn:hover {
-background-color: #6c757c;
-box-shadow: 0px 15px 20px #6c757c;
+background-color: #54b3d6;
+box-shadow: 0px 15px 20px #54b3d6;
 color: #dee2e6;
 transform: translateY(-7px);
 }
 
 .btn:active {
 transform: translateY(-1px);
+}
+
+.login-stuff{
+    color: #DEE2E6;
+    padding-bottom: 12px;
+}
+
+.login-label {
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    color: #54b3d6;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.login-label:hover {
+    cursor: pointer;
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: white;
 }

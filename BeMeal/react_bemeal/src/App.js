@@ -6,6 +6,7 @@ import {
 import Home from "./routes/Home.js";
 import Register from "./routes/Register.js";
 import Login from "./routes/Login.js";
+import UserProfile from "./routes/UserProfile.js";
 import "./App.css"
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route path="/home">
           <Home/>
+        </Route>
+        <Route path='/profile'>
+          <UserProfile/>
         </Route>
         <Route path="/">
           <Login/>

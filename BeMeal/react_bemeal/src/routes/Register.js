@@ -1,14 +1,25 @@
 import React, {useEffect, useState} from "react";
-import './Register.css';
 import Navbar from "../components/Navbar.js";
 import axios from 'axios';
+import './Register.css';
 
 function Register() {
     return (
         <div>
             <Navbar/>
+            <div class="container-background">
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+            </div>
             <div class='content'>
-                <form onSubmit={(event) => {
+                <form class="register-form" onSubmit={(event) => {
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
                     axios.post('/register', {
@@ -26,7 +37,7 @@ function Register() {
                         <input class="un" type="text" name="username" placeholder="Username"/>
                         <input class="pass" type="text" name="password" placeholder="Password"/>
                     <button class="btn">Create Account</button>
-                    <a onClick={() => {window.location.href="/"}}>Already know your login?</a>
+                    <p class="login-stuff">Already know your <a class="login-label" onClick={() => {window.location.href="/"}}>login?</a> </p>
                 </form>
             </div>
         </div>
