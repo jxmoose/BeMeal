@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './Register.css';
-import Navbar from "../components/Navbar.js"
+import Navbar from "../components/Navbar.js";
+import axios from 'axios';
 
 function Register() {
     return (
@@ -10,12 +11,16 @@ function Register() {
                 <form onSubmit={(event) => {
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
-                    const obj = {username: event.target.username.value, password: event.target.password.value}
-                    fetch('http://localhost:8080/register', {
-                        method: 'POST',
-                        mode: 'cors',
-                        body: JSON.stringify(obj)
+                    axios.post('/register', {
+                        username: event.target.username.value,
+                        password: event.target.password.value
                     })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
                 }}>
                     <h2 class="register-label">Register</h2>
                     <label>

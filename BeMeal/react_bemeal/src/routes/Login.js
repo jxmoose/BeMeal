@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import './Login.css';
 import Navbar from "../components/Navbar"
 import { useHistory } from "react-router-dom";
+import axios from 'axios';
 
 function Login() {
     const history = useHistory(); 
@@ -17,14 +18,19 @@ function Login() {
                 <form onSubmit={(event) => {
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
-                    const obj = {username: event.target.username.value, password: event.target.password.value}
-                    fetch('http://localhost:8080/register', {
-                        method: 'POST',
-                        mode: 'cors',
-                        body: JSON.stringify(obj)
+                    axios.post('/auth', {
+                        username: event.target.username.value,
+                        password: event.target.password.value
                     })
-                    let path = `/home`; 
-                    history.push(path);
+                    .then(function (response) {
+                        if (response == "Authenticated!") {
+                            let path = `/home`; 
+                            history.push(path);
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
                 }}>
                     <label style={{
                         marginBottom: '2vh',
