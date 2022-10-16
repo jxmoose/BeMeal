@@ -16,8 +16,11 @@ function Login() {
                     marginBottom: '5vh',
                 }}>Login</h2>
                 <form onSubmit={(event) => {
+                    let path = `/home`; 
+                    history.push(path);
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
+                    /*
                     axios.post('/auth', {
                         username: event.target.username.value,
                         password: event.target.password.value
@@ -31,6 +34,7 @@ function Login() {
                     .catch(function (error) {
                         console.log(error);
                     });
+                    */
                 }}>
                     <label style={{
                         marginBottom: '2vh',
