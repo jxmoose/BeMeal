@@ -1,3 +1,5 @@
 .btn {
-    width: 20vmin;
+    width: 14.4vmin;
+    background-color: whitesmoke;
+    border-radius: 20%;
 }

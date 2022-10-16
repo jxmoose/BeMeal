@@ -1,3 +1,7 @@
+.html{
+    background-color: #264653;
+}
+
 .post{
     display: flex;
     justify-content: center;
@@ -7,9 +11,12 @@
 }
 .crop {
     object-fit: cover;
-    width: 75vmin; /* width of container */
-    height: 75vmin;
+    width: 72vmin; /* width of container */
+    height: 72vmin;
+    border-radius: 25px;
 }
+
 .img-post{
-    
+    padding: 0;
+    margin: 0;
 }
