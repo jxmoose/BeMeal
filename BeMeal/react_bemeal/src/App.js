@@ -4,12 +4,24 @@ import {
   Route
 } from "react-router-dom";
 import Home from "./routes/Home";
+import Register from "./routes/Register";
+import Login from "./routes/Login";
+import Test from "./routes/Test";
 
 function App() {
   return <Router>
     <Switch>
-      <Route path="/">
+      <Route path="/register">
+        <Register/>
+      </Route>
+      <Route path="/test">
+        <Test/>
+      </Route>
+      <Route path="/home">
         <Home/>
+      </Route>
+      <Route path="/">
+        <Login/>
       </Route>
     </Switch>
   </Router>;
