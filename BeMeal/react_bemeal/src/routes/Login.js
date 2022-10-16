@@ -16,25 +16,25 @@ function Login() {
                     marginBottom: '5vh',
                 }}>Login</h2>
                 <form onSubmit={(event) => {
-                    let path = `/home`; 
-                    history.push(path);
+                    //let path = `/home`; 
+                    //history.push(path);
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
-                    /*
+                    let condition = ""
                     axios.post('/auth', {
                         username: event.target.username.value,
                         password: event.target.password.value
                     })
                     .then(function (response) {
-                        if (response == "Authenticated!") {
-                            let path = `/home`; 
-                            history.push(path);
-                        }
+                        condition = response.data
                     })
                     .catch(function (error) {
                         console.log(error);
                     });
-                    */
+                    if (condition === "Authenticated!") {
+                        let path = `/home`; 
+                        history.push(path);
+                    }
                 }}>
                     <label style={{
                         marginBottom: '2vh',
