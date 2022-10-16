@@ -23,15 +23,9 @@ function Register() {
                     });
                 }}>
                     <h2 class="register-label">Register</h2>
-                    <label>
-                        <text>Enter Username: </text>
-                        <input type="text" name="username"/>
-                    </label>
-                    <label>
-                        <text>Enter Password: </text>
-                        <input type="text" name="password"/>
-                    </label>
-                    <button>Create Account</button>
+                        <input class="un" type="text" name="username" placeholder="Username"/>
+                        <input class="pass" type="text" name="password" placeholder="Password"/>
+                    <button class="btn">Create Account</button>
                     <a onClick={() => {window.location.href="/"}}>Already know your login?</a>
                 </form>
             </div>
