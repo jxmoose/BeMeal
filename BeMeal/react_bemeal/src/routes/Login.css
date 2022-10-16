@@ -4,3 +4,20 @@
     justify-content: center;
     flex-direction: column;
 }
+
+.need-account-cover {
+    padding-bottom: 12px;
+}
+
+.need-account {
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    color: #54b3d6;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.need-account:hover {
+    cursor: pointer;
+    box-shadow: inset 200px 0 0 0 #54b3d6;
+    color: white;
+}

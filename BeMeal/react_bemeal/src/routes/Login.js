@@ -1,22 +1,28 @@
 import React, {useEffect, useState} from "react";
-import './Login.css';
 import Navbar from "../components/Navbar"
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
+import './Login.css';
 
 function Login() {
     const history = useHistory(); 
     return (
         <div>
             <Navbar/>
-            <div class = 'content' style={{
-                height: '70vh'
-            }}>
-                <h2 class = 'content' style={{
-                    marginBottom: '5vh',
-                }}>Login</h2>
+            <div class="container-background">
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+            </div>
+            <div class='content'>
                 <form onSubmit={(event) => {
-                    let path = `/home`;
+                    let path = `/home`; 
                     history.push(path);
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
@@ -38,20 +44,11 @@ function Login() {
                     }
                     */
                 }}>
-                    <label style={{
-                        marginBottom: '2vh',
-                    }}>
-                        <text>Enter Username: </text>
-                        <input type="text" name="username"/>
-                    </label>
-                    <label>
-                        <text>Enter Password: </text>
-                        <input type="text" name="password"/>
-                    </label>
-                    <button class = "content" style={{
-                        marginTop: '2vh'
-                    }}>Login</button>
-                    <a onClick={() => {window.location.href="/register"}}>Don't have an account?</a>
+                    <h2 class="register-label">Login</h2>
+                        <input class="un" type="text" name="username" placeholder="Username"/>
+                        <input class="pass" type="text" name="password" placeholder="Password"/>
+                    <button class="btn">Login</button>
+                    <p class="need-account-cover"><a class="need-account" onClick={() => {window.location.href="/register"}}>Don't have an account?</a></p>
                 </form>
             </div>
         </div>

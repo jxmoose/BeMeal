@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar.js"
 import { useHistory } from "react-router-dom";
 import profilepic from "../blank-profile-picture-973460_640.png"
 
