@@ -16,7 +16,7 @@ function Login() {
                     marginBottom: '5vh',
                 }}>Login</h2>
                 <form onSubmit={(event) => {
-                    let path = `/home`; 
+                    let path = `/home`;
                     history.push(path);
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
