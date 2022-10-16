@@ -1,5 +1,7 @@
 body {
     color: #DEE2E6;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .register-form{
@@ -7,12 +9,35 @@ body {
 }
 
 .content > * {
+    position: relative;
     background-color: #6C757C;
     width: 400px;
     /*height: 400px;*/
     margin: 7em auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.container-background {
+    margin: 3rem;
+    position: absolute;
+    display:inline-block; 
+
+    top: -1000px;
+    left: -350px;
+    bottom: -200px;
+    z-index: -1;
+    transform: rotate(300deg);
+    -webkit-transform: rotate(300deg);
+    color: #c6afaf;
+    font-size: 200px;
+    opacity: 40%;
+}
+
+.background-text{
+    white-space:nowrap;
+    margin: 0;
+    overflow: hidden;
 }
 
 .register-label{
@@ -36,7 +61,6 @@ body {
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
     margin-bottom: 30px;
-    text-align: center;
     margin-bottom: 27px;
 }
 
@@ -54,7 +78,6 @@ body {
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.02);
     margin-bottom: 50px;
-    text-align: center;
     margin-bottom: 27px;
 }
 
@@ -77,8 +100,8 @@ body {
 }
 
 .btn:hover {
-background-color: #6c757c;
-box-shadow: 0px 15px 20px #212519;
+background-color: #54b3d6;
+box-shadow: 0px 15px 20px #54b3d6;
 color: #dee2e6;
 transform: translateY(-7px);
 }

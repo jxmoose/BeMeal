@@ -9,6 +9,17 @@ function Login() {
     return (
         <div>
             <Navbar/>
+            <div class="container-background">
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+            </div>
             <div class='content'>
                 <form onSubmit={(event) => {
                     let path = `/home`; 

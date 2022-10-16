@@ -1,12 +1,23 @@
 import React, {useEffect, useState} from "react";
-import './Register.css';
 import Navbar from "../components/Navbar.js";
 import axios from 'axios';
+import './Register.css';
 
 function Register() {
     return (
         <div>
             <Navbar/>
+            <div class="container-background">
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+                <p class="background-text">BeMeal BeMeal BeMeal</p>
+            </div>
             <div class='content'>
                 <form class="register-form" onSubmit={(event) => {
                     //console.log(event.target.username.value)
