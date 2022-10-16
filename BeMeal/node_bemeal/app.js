@@ -3,12 +3,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var apiRouter = require('.routes/api');
+var apiRouter = require('./routes/api');
 
 var app = express();
+
+//middleware
+app.use(cors());
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,5 +49,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.use(function (req, res, next) {
+  console.log(req.session)
+})
 
 module.exports = app;
