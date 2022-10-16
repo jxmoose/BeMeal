@@ -8,7 +8,7 @@ function Register() {
         <div>
             <Navbar/>
             <div class='content'>
-                <form onSubmit={(event) => {
+                <form class="register-form" onSubmit={(event) => {
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
                     axios.post('/register', {
