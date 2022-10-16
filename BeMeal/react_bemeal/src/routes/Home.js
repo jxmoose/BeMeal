@@ -7,7 +7,7 @@ function Home() {
     return (
         <div>
             <Navbar/>
-            <div style={{ overflow: "scroll" }}>
+            <div>
                 <Post/>
                 <Post/>
                 <Post/>
