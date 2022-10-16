@@ -5,6 +5,7 @@ var app = express();
 var cors = require('cors');
 var bcrypt = require('bcrypt');
 var session = require('express-session');
+var bodyParser = require("body-parser");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -72,9 +73,12 @@ function hashPassword(username, password){
   })
 };
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 router.post('/register', function(request, response) {
-  let username = request.body.username;
-  let password = request.body.password;
+  let text = JSON.parse(JSON.stringify(request.body));
+  console.log(smth["username"])
   if (username && password) {
     const check_username = pool.query("SELECT username FROM users WHERE username = $1", [username], function(error, results){
       if (error) throw error;

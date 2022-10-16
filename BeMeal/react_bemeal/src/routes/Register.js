@@ -22,8 +22,10 @@ function Register() {
                     const obj = {username: event.target.username.value, password: event.target.password.value}
                     fetch('http://localhost:8080/register', {
                         method: 'POST',
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
                         mode: 'cors',
-                        body: JSON.stringify(obj)
+                        body: 
+                            JSON.stringify({obj})
                     })
                 }}>
                     <label style={{

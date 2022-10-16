@@ -18,8 +18,8 @@ const s3 = new AWS.S3({
     secretAccessKey: secretAccessKey,
     region:region
 });
-  
-app.post("/uploadfile", upload.single('file'), (req, res) => {
+
+router.post("/uploadfile", upload.single('file'), (req, res) => {
     // console.log(req);
     console.log(req.file);
     if (req.file == null) {
@@ -50,6 +50,24 @@ app.post("/uploadfile", upload.single('file'), (req, res) => {
     }
     uploadImage(file);
     return res.send(201)
+})
+
+router.get("/retrievefiles", function(req, res){
+    let username = req.body.username;
+    const retrieve_images = pool.query("SELECT location FROM images WHERE username = $1", [username], function(error, results){
+        output = []
+        if (error) throw error;
+        // If the account exists
+        if (results.rows.length > 0) {
+          for(let i = 0; i < results.rows.length; i++) {
+            var params = { Bucket: config.bucket, Key: req.params.imageId };
+            s3.getObject(params, function(err, data) {
+            output.push(data)
+            });
+          }
+          res.send({output});
+        }
+      });
 })
 
 module.exports = router;

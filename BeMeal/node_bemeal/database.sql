@@ -10,3 +10,9 @@ CREATE TABLE comments(
     username varchar(25),
     text varchar(500)
 )
+
+CREATE TABLE images (
+    username varchar(25), 
+    image_id int, 
+    location varchar(100)
+)
