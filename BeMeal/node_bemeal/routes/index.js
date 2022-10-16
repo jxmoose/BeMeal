@@ -41,7 +41,8 @@ router.post('/auth', function(request, response) {
           if(result){
             request.session.loggedin = true;
             request.session.username = username;
-            response.redirect('/');
+            response.send("Authenticated!");
+            //response.redirect('/');
           }
           else {
             response.send('Incorrect Username and/or Password!');
@@ -77,8 +78,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 router.post('/register', function(request, response) {
-  let text = JSON.parse(JSON.stringify(request.body));
-  console.log(smth["username"])
+  let username = request.body.username;
+  let password = request.body.password;
   if (username && password) {
     const check_username = pool.query("SELECT username FROM users WHERE username = $1", [username], function(error, results){
       if (error) throw error;
@@ -90,7 +91,7 @@ router.post('/register', function(request, response) {
         hashPassword(username, password);
       }
     });
-      // If there is an issue with the query, output the erro
+      // If there is an issue with the query, output the error
 	} else {
 		response.send('Please enter valid Username and Password!')
 	}
