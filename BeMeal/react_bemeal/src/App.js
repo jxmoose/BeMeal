@@ -3,20 +3,16 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Home from "./routes/Home";
-import Register from "./routes/Register";
-import Login from "./routes/Login";
-import Test from "./routes/Test";
+import Home from "./routes/Home.js";
+import Register from "./routes/Register.js";
+import Login from "./routes/Login.js";
 import "./App.css"
 
 function App() {
-  return <Router>
+  return <div class=""> <Router>
       <Switch>
         <Route path="/register">
           <Register/>
-        </Route>
-        <Route path="/test">
-          <Test/>
         </Route>
         <Route path="/home">
           <Home/>
@@ -26,7 +22,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
-  
+  </div>
 }
 
 export default App;

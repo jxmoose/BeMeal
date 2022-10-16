@@ -1,44 +1,32 @@
 import React, {useEffect, useState} from "react";
 import './Register.css';
+import Navbar from "../components/Navbar.js";
+import axios from 'axios';
 
 function Register() {
     return (
         <div>
-            <div>
-                <h1>BeMeal</h1>
-            </div>
-            <div class = 'content'>
-                <h2 style={{
-                    marginBottom: '5vh',
-                }}>Register</h2>
-                <form style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexDirection: 'column'
-                }} onSubmit={(event) => {
+            <Navbar/>
+            <div class='content'>
+                <form onSubmit={(event) => {
                     //console.log(event.target.username.value)
                     //console.log(event.target.password.value)
-                    const obj = {username: event.target.username.value, password: event.target.password.value}
-                    fetch('http://localhost:8080/register', {
-                        method: 'POST',
-                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                        mode: 'cors',
-                        body: 
-                            JSON.stringify({obj})
+                    axios.post('/register', {
+                        username: event.target.username.value,
+                        password: event.target.password.value
                     })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
                 }}>
-                    <label style={{
-                        marginBottom: '2vh',
-                    }}>
-                        <text>Enter Username: </text>
-                        <input type="text" name="username"/>
-                    </label>
-                    <label>
-                        <text>Enter Password: </text>
-                        <input type="text" name="password"/>
-                    </label>
-                    <button>Submit</button>
+                    <h2 class="register-label">Register</h2>
+                        <input class="un" type="text" name="username" placeholder="Username"/>
+                        <input class="pass" type="text" name="password" placeholder="Password"/>
+                    <button class="btn">Create Account</button>
+                    <a onClick={() => {window.location.href="/"}}>Already know your login?</a>
                 </form>
             </div>
         </div>
