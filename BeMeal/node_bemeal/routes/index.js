@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-// create todo
+/* create todo
 router.post("/todos", async (req, res) => {
   try {
     const { description } = req.body;
@@ -22,6 +22,7 @@ router.post("/todos", async (req, res) => {
     console.log(err.message);
   }
 });
+*/
 
 router.post('/auth', function(request, response) {
 	// Capture the input fields
@@ -75,7 +76,16 @@ router.post('/register', function(request, response) {
   let username = request.body.username;
   let password = request.body.password;
   if (username && password) {
-    hashPassword(username, password)
+    const check_username = pool.query("SELECT username FROM users WHERE username = $1", [username], function(error, results){
+      if (error) throw error;
+      // If the account exists
+      if (results.rows.length > 0) {
+        response.send("Username already exists");
+      }
+      else{
+        hashPassword(username, password);
+      }
+    });
       // If there is an issue with the query, output the erro
 	} else {
 		response.send('Please enter valid Username and Password!')

@@ -4,10 +4,6 @@ var pool = require('../db');
 var app = express();
 var cors = require('cors');
 
-//middleware
-app.use(cors());
-app.use(express.json());
-
 // create todo
 router.post("/update", async (req, res) => {
   try {
