@@ -1,9 +1,17 @@
 import React, {useEffect, useState} from "react";
 import Navbar from "../components/Navbar.js";
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 import './Register.css';
 
 function Register() {
+
+    const history = useHistory();
+  
+    const routeChange = () =>{ 
+        let path = `newPath`; 
+        history.push(path);
+    }
     return (
         <div>
             <Navbar/>
@@ -35,8 +43,8 @@ function Register() {
                 }}>
                     <h2 class="register-label">Register</h2>
                         <input class="un" type="text" name="username" placeholder="Username"/>
-                        <input class="pass" type="text" name="password" placeholder="Password"/>
-                    <button class="btn">Create Account</button>
+                        <input class="pass" type="password" name="password" placeholder="Password"/>
+                    <button class="btn" onClick={ routeChange }>Create Account</button>
                     <p class="login-stuff">Already know your <a class="login-label" onClick={() => {window.location.href="/"}}>login?</a> </p>
                 </form>
             </div>
