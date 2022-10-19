@@ -7,6 +7,9 @@ var bcrypt = require('bcrypt');
 var session = require('express-session');
 var bodyParser = require("body-parser");
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -24,6 +27,13 @@ router.post("/todos", async (req, res) => {
   }
 });
 */
+
+router.get('/db/users', function(req, res){
+  const users = pool.query('SELECT * FROM users', [], function(error, results) {
+    if (error) throw error;
+    res.send(results.rows);
+  })
+});
 
 router.post('/auth', function(request, response) {
 	// Capture the input fields
@@ -73,9 +83,6 @@ function hashPassword(username, password){
     console.log(err);
   })
 };
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 router.post('/register', function(request, response) {
   let username = request.body.username;
